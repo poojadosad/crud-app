@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="h2">Crud app</h1>
+    <div class="d-flex gap-2">
+        <h5>Add infomation</h3>
+        <form action="/" id="form-submit" method="POST" class="d-flex align-items-center gap-2">
+            <div>
+                <label for="student"></label>
+                <input type="text" id="name" placeholder="Name">
+            </div>
+            <div>
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div>
+                <label for="phone"></label>
+                <input type="number" id="phone" placeholder="Phone">
+            </div>
+            <input type="hidden">
+            <button class="btn btn-primary btn-sm" type="submit">Add</button>
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="t-body">
+        </tbody>
+    </table>
+    <script src="index.js"></script>
+</body>
+</html>
