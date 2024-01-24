@@ -22,9 +22,9 @@ router.post("/", async (req, res) => {
 
   try {
     const s1 = await student.save();
-    res.json(s1);
+    res.redirect("/");
   } catch (err) {
-    res.send("Error");
+    res.send("Error posting student " + err);
   }
 });
 

@@ -34,15 +34,14 @@ const tableBody = (data) => {
 
 // Add a new student to the database with the form data from the user
 document.addEventListener("DOMContentLoaded", () => {
-  formSubmit.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     // Get the values from the form fields
     const name = studentName.value;
     const email = studentEmail.value;
     const phone = studentPhone.value;
 
     console.log(name);
-    // Send the new student data to the server\
+    // Send the new student data to the server
     const response = await fetch("http://localhost:9000/students", {
       method: "POST",
       headers: {
@@ -67,5 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
     studentName.value = "";
     studentEmail.value = "";
     studentPhone.value = "";
-  });
+  };
 });

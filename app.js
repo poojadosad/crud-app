@@ -14,6 +14,8 @@ con.on("open", () => {
 });
 
 app.use(express.json());
+// ensure that data sent from HTML forms is automatically parsed and made available in your route handlers as req.body
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const studentRouter = require("./routes/students");
