@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Student = require("../models/student");
+const student = require("../models/student");
 
 router.get("/", async (req, res) => {
   console.log("get request");
@@ -26,6 +27,19 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.send("Error posting student " + err);
   }
+});
+
+router.delete("/:id", async (req, res) => {
+  const response = await student.deleteOne({ _id: req.params.id });
+  res.send(JSON.stringify(response));
+});
+
+router.put("/:id", async (req, res) => {
+  const response = await student.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+
+  res.send(response);
 });
 
 module.exports = router;
